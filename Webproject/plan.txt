@@ -1,0 +1,4 @@
+record income/expenditure
+plan
+set Alert
+grahp
