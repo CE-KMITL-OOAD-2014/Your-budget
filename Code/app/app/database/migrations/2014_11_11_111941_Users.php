@@ -14,17 +14,16 @@ public function up()
 	{
 		Schema::create('Member', function($table)
         { 
-        	$table->string('username');
+        	$table->string('userName')->unique();
             $table->increments('id');
             $table->string('name');
-            $table->string('planType');
+            $table->string('planType')->nullable(true);
             $table->integer('point');
             $table->integer('balance');
             $table->string('password');
+            $table->string('remember_token',100);
             $table->timestamps();
-            
-            $table->unique('username');
-        });
+            });
 	}
 	/**
 	 * Reverse the migrations.

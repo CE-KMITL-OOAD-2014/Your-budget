@@ -13,5 +13,36 @@
 
 Route::get('/', function()
 {
-	return View::make('login');
+	if (Auth::check()) 
+		return Redirect::to('home');
+	return  View::make('login');
 });
+
+
+Route::get('home', function()
+{
+	return  View::make('index');
+});
+
+
+// Route::get('index', function()
+// {
+// 	return  View::make('index');
+// });
+
+
+Route::post('logIn', 'AuthenticationController@logIn' );
+
+Route::get('logOut', 'AuthenticationController@logOut');
+
+Route::post('register', 'AuthenticationController@register');
+
+
+
+
+
+Route::post('income', 'RecordController@addIncome');
+
+Route::post('outcome', 'RecordController@addOutcome');
+
+Route::get('remove', 'RecordController@remove');

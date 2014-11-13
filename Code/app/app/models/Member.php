@@ -3,6 +3,7 @@
 
 class Member{
 	private $id ;
+	private $ownerId ;
 	private $userName ;
 	private $name ;
 	private $planType ;
@@ -16,11 +17,12 @@ class Member{
 	public function __construct()
 	{
 		$this->id = Null;   
+		$this->ownerId = Null;   
 		$this->userName = Null;   
 		$this->name = Null; 
 		$this->planType = Null; 
-		$this->point = Null 
-		$this->balance = Null; 
+		$this->point = 0 ;
+		$this->balance = 0; 
 		$this->password = Null; 
 //		$this->recordTable = Null; 
 //		$this->reminderTable = Null; 
@@ -30,6 +32,10 @@ class Member{
 //Set status
 	public function setId ($val){
 		$this->id = $val;
+	}
+
+	public function setOwnerId ($val){
+		$this->ownerId = $val;
 	}
 
 	public function setUserName ($val){
@@ -62,6 +68,10 @@ class Member{
 		return $this->id;
 	}
 
+	public function getOwnerId (){
+		return $this->ownerId;
+	}
+
 	public function getUserName (){
 		return $this->userName;
 	}
@@ -85,7 +95,6 @@ class Member{
 	public function getPassword (){
 		return $this->password;
 	}
-
 
 }
 

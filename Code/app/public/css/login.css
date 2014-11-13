@@ -1,5 +1,5 @@
 html {
-	background-image: url('bg.jpg')  ;
+	/*background-image: url('bg.jpg')  ;*/
 	background-attachment: fixed;
 	position: relative;
 	min-height: 100%;
@@ -7,7 +7,7 @@ html {
 }
 
 #head {
-	background-image: url('bg.jpg')  ;
+	/*background-image: url('bg.jpg')  ;*/
 	background-attachment: fixed;
 	padding: 3% ;
 	margin: auto;
@@ -38,7 +38,7 @@ html {
 
 #bank {
 	height :200px;
-	background-image: url('bg.jpg')  ;
+	/*background-image: url('bg.jpg')  ;*/
 	background-attachment: fixed;
 	width: 100%;
 	background-size: cover;
