@@ -25,15 +25,54 @@ class RecordController extends BaseController{
 		return Redirect::to('home');
 	}
 
-	public function remove(){
-		$temp = RecordDB::find('id','=','9')->get();
-		RecordDB::destroy($temp[0]);
-		// echo $temp->info;
-
-
-
-
+	public function addReminder(){
+		$Reminder = new Reminder ;
+		$ReminderRepo = new ReminderInterface ;
+		$Reminder->setOwnerId(Auth::user()->id);
+		$Reminder->setAmount(Input::get('amount'));
+		$Reminder->setInfo(Input::get('info'));
+		$Reminder->setDate(Input::get('date'));
+		$ReminderRepo->saveRepository($Reminder);
+		return Redirect::to('home');
 	}
+
+	public function remove(){
+		RecordDB::destroy(Input::get('delete'));
+		return Redirect::to('list');
+	}
+
+
+	public function removeReminder(){
+		ReminderDB::destroy(Input::get('delete'));
+		return Redirect::to('list');
+	}
+
+	// public function achiveReminder(){
+	// 	ReminderDB::destroy(Input::get('complete'));
+	// 	$temp=Auth::user()->point;
+	// 	$user = User::find($temp=Auth::user()->id);
+	// 	$user->point = (Auth::user()->point)+10; 
+	// 	$user->save();	
+	// return Redirect::to('list');
+	// }
+
+	public function achiveReminder(){
+		$user = User::find($temp=Auth::user()->id);
+		$user->point = (Auth::user()->point)+10; 
+		$user->save();	
+		ReminderDB::destroy(Input::get('complete'));
+	return Redirect::to('list');
+	}
+
+
+	
+	public function listRecord(){
+		$tempIncome = RecordDB::where('type','=',1)->where('ownerId', '=' , Auth::user()->id)->get();
+		$tempOutcome = RecordDB::where('type','=',2)->where('ownerId', '=' , Auth::user()->id)->get();
+		$tempReminder = ReminderDB::where('ownerId', '=' , Auth::user()->id)->get();
+		return  View::make('index')->with(array('listIncome'=>$tempIncome,'listOutcome'=>$tempOutcome,'listReminder'=>$tempReminder));
+	}
+
 }
 
 

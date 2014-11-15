@@ -56,81 +56,60 @@
 												<label for="exampleInputEmail1">User Name</label>
 												<input type="text" class="form-control" id="exampleInputEmail1" placeholder="User Name" required name="userName">
 											</div>
-
-								<!--			<div class="form-group">
-												<label for="exampleInputEmail1">Last Name</label>
-												<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Last Name" required>
-											</div>
 											<div class="form-group">
-												<label for="exampleInputEmail1">Email address</label>
-												<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
+												<label for="exampleInputPassword1">Password</label>
+												<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required name="password">
 											</div>
-										-->
-										<div class="form-group">
-											<label for="exampleInputPassword1">Password</label>
-											<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required name="password">
-										</div>
-											<!-- <div class="form-group">
-												<label for="exampleInputPassword1">Re-Password</label>
-												<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required name="rePassword">
-											</div> -->
-								<!--			<label class="radio-inline" required>
-												<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> Male
-											</label>
-											<label class="radio-inline">
-												<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Female
-											</label>
-										-->	
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal">Cancle</button>
-											<!-- <button type="submit" class="btn btn-primary">Sign up</button> -->
-											<input class="btn btn-primary"type="submit" value="Sign up">
-										</div>
-									</form>
-								</div><!--end registeration-->
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Cancle</button>
+												<!-- <button type="submit" class="btn btn-primary">Sign up</button> -->
+												<input class="btn btn-primary"type="submit" value="Sign up">
+											</div>
+										</form>
+									</div><!--end registeration-->
+								</div>
 							</div>
 						</div>
-					</div>
-				</div><!--end sign up-->
-			</div> <!-- /container -->
+					</div><!--end sign up-->
+				</div> <!-- /container -->
+			</div>
 		</div>
+	</div><!--end header-->
+
+	<div id="midle" class="container-fluid"><!-- midle-->
+		<div class="row">
+			<div class="col-lg-4">
+				<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+				<h2>Mobility</h2>
+				<p>Ability to work anywhere. The data is stored on the cloud.</p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+				<h2>Change the future</h2>
+				<p>hange the recording of income and expenses. Use of newer technology and more functionality added.</p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+				<h2>One head use</h2>
+				<p>Intuitive, easy to understand web pages.</p>
+			</div><!-- /.col-lg-4 -->
+		</div><!-- /.row -->
+	</div><!-- end midle-->
+	<div id="bank" class="container">
 	</div>
-</div><!--end header-->
-
-<div id="midle" class="container-fluid"><!-- midle-->
-	<div class="row">
-		<div class="col-lg-4">
-			<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-			<h2>Mobility</h2>
-			<p>Ability to work anywhere. The data is stored on the cloud.</p>
-		</div><!-- /.col-lg-4 -->
-		<div class="col-lg-4">
-			<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-			<h2>Change the future</h2>
-			<p>hange the recording of income and expenses. Use of newer technology and more functionality added.</p>
-		</div><!-- /.col-lg-4 -->
-		<div class="col-lg-4">
-			<img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-			<h2>One head use</h2>
-			<p>Intuitive, easy to understand web pages.</p>
-		</div><!-- /.col-lg-4 -->
-	</div><!-- /.row -->
-</div><!-- end midle-->
-<div id="bank" class="container">
-</div>
-<div class="footer">
+	<div class="footer">
 
 
 
-@if(Session::has('notice'))
-	<br>
-	<div class="container">
-		<div class="alert alert-danger" role="alert">
-			<font color="red"><li>{{ Session::get('notice') }}</li></font>
+		@if(Session::has('notice'))
+		<br>
+		<div class="container">
+			<div class="alert alert-danger" role="alert">
+				<font color="red"><li>{{ Session::get('notice') }}</li></font>
+			</div>
 		</div>
-	</div>
-</br>
-@endif
+	</br>
+	@endif
 
 
 

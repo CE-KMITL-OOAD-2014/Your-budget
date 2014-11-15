@@ -23,9 +23,8 @@
 	</form><!--end of logout part -->
 	
 
-	<label>income</label>>
+	<label>income</label>
 	<form method="post" action="income" >
-		<!-- <input type="number" hidden value="Auth::user()->id"> -->
 		Amonut: <input type="number" min="0" required name="amount"><br>
 		Info:  <input type="text" required name="info"><br>
 		<input type="submit" value="Submit">
@@ -33,9 +32,10 @@
 
 
 
-
+	{{Auth::user()->name;}}
+	{{Auth::user()->point;}}
 	<!-- outcome -->
-	<label>outcome</label>>
+	<label>outcome</label>
 	<form method="post" action="outcome">
 		Amonut: <input type="number" min="0" name="amount"><br>
 		Info:  <input type="text" name="info"><br>
@@ -48,12 +48,54 @@
 		<input type="submit" value="Submit">
 	</form>
 
+{{date("m-d-Y")}}
 
-
-	<!-- remove -->
-	<form method="get" action="remove">
-	<input type="submit" value="remove">
+	<label>reminder</label>
+	<form method="post" action="reminder">
+		Amonut: <input type="number" min="0" name="amount"><br>
+		Info:  <input type="text" name="info"><br>
+		date: <input type="date" name="date" min="{{date('Y-m-d')}}"><br>
+		<input type="submit" value="Submit">
 	</form>
 
+
+incomt
+	@for($i=0;$i<count($listIncome);$i++)
+		<p>{{$listIncome[$i]->info}}</p>
+ 		<form method="post" action="remove">
+			<input type="hidden" name="delete" value="{{$listIncome[$i]->id}}">
+			<input type="submit" value="delete">
+		</form>	
+	@endfor
+
+	incomt
+	@for($i=0;$i<count($listOutcome);$i++)
+		<p>{{$listOutcome[$i]->info}}</p>
+ 		<form method="post" action="remove">
+			<input type="hidden" name="delete" value="{{$listOutcome[$i]->id}}">
+			<input type="submit" value="delete">
+		</form>	
+	@endfor
+
+
+	reminder
+	@for($i=0;$i<count($listReminder);$i++)
+		<p>{{$listReminder[$i]->info}}</p>
+ 		<form method="post" action="removeReminder">
+			<input type="hidden" name="delete" value="{{$listReminder[$i]->id}}">
+			<input type="submit" value="delete">
+		</form>	
+		 <form method="post" action="achiveReminder">
+			<input type="hidden" name="complete" value="{{$listReminder[$i]->id}}">
+			<input type="submit" value="complete">
+		</form>	
+
+	@endfor
+	<form method="post" action="ranking">
+		<input type="submit" value="kuy">
+	</form>
+
+
+	</form>
 </body>
 </html>

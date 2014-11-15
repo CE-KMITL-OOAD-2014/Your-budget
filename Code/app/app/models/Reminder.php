@@ -1,14 +1,12 @@
 <?php
 
 
-class Record{
+class Reminder{
 	private $id ;
 	private $ownerId ;
 	private $amount ;
 	private $info ;
-	private $type ;
-	private $category ;
-
+	private $date ;
 
 	public function __construct()
 	{
@@ -16,12 +14,11 @@ class Record{
 		$this->ownerId = NULL;
 		$this->amount = NULL ;
 		$this->info = NULL ;
-		$this->type = NULL;
-		$this->category = NULL ;
+		$this->date = NULL ;
 	}
 
 
-//Set status
+	//Set status
 	public function setId ($val){
 		$this->id = $val;
 	}
@@ -38,17 +35,12 @@ class Record{
 		$this->info = $val;
 	}
 
-	public function setType ($val){
-		$this->type = $val;
+	public function setDate ($val){
+		$this->date = $val;
 	}
 
 
-	public function setCategory ($val){
-		$this->category = $val;
-	}
-
-
-//Get stat
+	//Get stat
 	public function getId (){
 		return $this->id;
 	}
@@ -65,15 +57,7 @@ class Record{
 		return $this->info;
 	}
 
-	public function getType (){
-		return $this->type;
+	public function getDate (){
+		return $this->date;
 	}
-
-
-	public function getCategory (){
-		return $this->category;
-	}
-
-} 
-
-?>
+}

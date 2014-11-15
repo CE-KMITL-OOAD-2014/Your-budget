@@ -19,16 +19,15 @@ Route::get('/', function()
 });
 
 
-Route::get('home', function()
-{
-	return  View::make('index');
-});
+// Route::get('/','AuthenticationController@check' );
 
 
-// Route::get('index', function()
+// Route::get('home', function()
 // {
 // 	return  View::make('index');
 // });
+
+Route::get('home', 'HomeController@showWelcome');
 
 
 Route::post('logIn', 'AuthenticationController@logIn' );
@@ -38,11 +37,43 @@ Route::get('logOut', 'AuthenticationController@logOut');
 Route::post('register', 'AuthenticationController@register');
 
 
-
-
-
 Route::post('income', 'RecordController@addIncome');
 
 Route::post('outcome', 'RecordController@addOutcome');
 
-Route::get('remove', 'RecordController@remove');
+Route::post('remove', 'RecordController@remove');
+
+Route::any('list', 'RecordController@listRecord');
+
+Route::post('remove', 'RecordController@remove');
+
+Route::post('reminder', 'RecordController@addReminder');
+
+Route::post('removeReminder', 'RecordController@removeReminder');
+
+Route::post('achiveReminder', 'RecordController@achiveReminder');
+
+
+Route::any('ranking', 'RankingController@showRank');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

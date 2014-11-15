@@ -7,14 +7,13 @@ class AuthenticationController extends BaseController{
 		if (Auth::attempt($credential)) {
 			return Redirect::intended('home');
 		}
-		return Redirect::to('/') -> with ('notice','Your password or username is incorrect');
+		return Redirect::to('') -> with ('notice','Your password or username is incorrect');
 	}
-
 
 	public function logOut()
 	{
 		Auth::logout();
-		return Redirect::to('/') ;	
+		return Redirect::to('') ;	
 	}
 
 	public function register(){
