@@ -26,6 +26,6 @@ class AuthenticationController extends BaseController{
 		$Member->setName(Input::get('name'));
 		$Member->setPassword(Hash::make(Input::get('password')));
 		$MemberRepo->saveRepository($Member);
-		return Redirect::to('') ;//-> with ('notice','register success');
+		return Redirect::to('') ;
 	}
 }

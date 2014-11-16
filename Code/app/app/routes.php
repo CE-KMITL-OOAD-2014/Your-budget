@@ -19,7 +19,6 @@ Route::get('/', function()
 });
 
 
-
 Route::get('home', 'HomeController@showWelcome');
 
 

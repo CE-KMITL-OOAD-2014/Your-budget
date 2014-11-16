@@ -15,11 +15,9 @@ class MemberInterface {
            $temp->balance = $Member->getBalance();  
            $temp->password = $Member->getPassword();  
            $temp->save();
-          return $temp;           
-                // ->with('flash_notice', 'You are successfully logged out.');
+          return $temp -> with ('success','register success');           
         }else{
-           echo "Username already exists!";
-           // echo "<br> Go to <a href='register'>Register page</a>";
+           return Redirect::to('') -> with ('danger','Username already exists');
         }
     }
 

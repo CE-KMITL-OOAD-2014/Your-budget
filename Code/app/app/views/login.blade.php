@@ -154,23 +154,31 @@
 
 
 @if(Session::has('notice'))
-        <br>
-        <div class="container">
-            <div class="alert alert-danger" role="alert">
-                <font color="red"><li>{{ Session::get('notice') }}</li></font>
-            </div>
-        </div>
-    </br>
-
 <script>
 if(true) {
-    {{ Session::get('notice') }});
+    alert("Your password or username is incorrect");
 }
 </script>
+@endif
 
 
+@if(Session::has('success'))
+<script>
+if(true) {
+    alert("Registeration success");
+}
+</script>
+@endif
 
-    @endif
+
+@if(Session::has('danger'))
+<script>
+if(true) {
+    alert("Username already exists");
+}
+</script>
+@endif
+
 
 </body>
 
