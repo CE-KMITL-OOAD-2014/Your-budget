@@ -6,13 +6,9 @@ class Member{
 	private $ownerId ;
 	private $userName ;
 	private $name ;
-	private $planType ;
 	private $point ;
 	private $balance ;
 	private $password ;
-//	private $recordTable ;
-//	private $reminderTable ;
-
 
 	public function __construct()
 	{
@@ -20,12 +16,9 @@ class Member{
 		$this->ownerId = Null;   
 		$this->userName = Null;   
 		$this->name = Null; 
-		$this->planType = Null; 
 		$this->point = 0 ;
 		$this->balance = 0; 
 		$this->password = Null; 
-//		$this->recordTable = Null; 
-//		$this->reminderTable = Null; 
 	}
 
 
@@ -45,10 +38,6 @@ class Member{
 
 	public function setName ($val){
 		$this->name = $val;
-	}
-
-	public function setPlanType ($val){
-		$this->planType = $val;
 	}
 
 	public function setPoint ($val){
@@ -78,10 +67,6 @@ class Member{
 
 	public function getName (){
 		return $this->name;
-	}
-
-	public function getPlanType (){
-		return $this->planType;
 	}
 
 	public function getPoint (){

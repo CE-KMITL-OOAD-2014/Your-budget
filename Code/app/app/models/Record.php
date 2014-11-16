@@ -74,6 +74,17 @@ class Record{
 		return $this->category;
 	}
 
+	//used to find total amount of category($val)
+	public function countCategory($val){
+		$temp = RecordDB::where('ownerId','=',Auth::user()->id)->where('category','=',$val)->get();
+		$return = 0;
+		for ($i=0; $i<count($temp) ; $i++) { 
+			$return = $return+$temp[$i]->amount;
+		}
+		return $return ;
+	}
+
+
 } 
 
 ?>

@@ -19,13 +19,6 @@ Route::get('/', function()
 });
 
 
-// Route::get('/','AuthenticationController@check' );
-
-
-// Route::get('home', function()
-// {
-// 	return  View::make('index');
-// });
 
 Route::get('home', 'HomeController@showWelcome');
 
@@ -45,7 +38,9 @@ Route::post('remove', 'RecordController@remove');
 
 Route::any('list', 'RecordController@listRecord');
 
-Route::post('remove', 'RecordController@remove');
+Route::post('removeIncome', 'RecordController@removeIncome');
+
+Route::post('removeOutcome', 'RecordController@removeOutcome');
 
 Route::post('reminder', 'RecordController@addReminder');
 
@@ -57,7 +52,10 @@ Route::post('achiveReminder', 'RecordController@achiveReminder');
 Route::any('ranking', 'RankingController@showRank');
 
 
+Route::post('achiveReminder', 'RecordController@achiveReminder');
 
+
+Route::post('graph', 'GraphController@getGraph');
 
 
 

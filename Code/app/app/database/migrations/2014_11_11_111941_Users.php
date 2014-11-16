@@ -17,7 +17,6 @@ public function up()
         	$table->string('userName')->unique();
             $table->increments('id');
             $table->string('name');
-            $table->string('planType')->nullable(true);
             $table->integer('point');
             $table->integer('balance');
             $table->string('password');

@@ -2,6 +2,7 @@
 
 class RecordInterface {
 
+//interface to save Record object to DB
  public function saveRepository($Record){
            $temp = new RecordDB;
            $temp->id = $Record->getId();

@@ -2,6 +2,7 @@
 
 class ReminderInterface {
 
+//interface to save Record object to DB
  public function saveRepository($Reminder){
            $temp = new ReminderDB;
            $temp->id = $Reminder->getId();
