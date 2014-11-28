@@ -31,7 +31,7 @@ Route::post('register', 'AuthenticationController@register');
 
 Route::post('income', 'RecordController@addIncome');
 
-Route::post('outcome', 'RecordController@addOutcome');
+Route::post('expenses', 'RecordController@addExpenses');
 
 Route::post('remove', 'RecordController@remove');
 
@@ -39,7 +39,7 @@ Route::any('list', 'RecordController@listRecord');
 
 Route::post('removeIncome', 'RecordController@removeIncome');
 
-Route::post('removeOutcome', 'RecordController@removeOutcome');
+Route::post('removeExpenses', 'RecordController@removeExpenses');
 
 Route::post('reminder', 'RecordController@addReminder');
 

@@ -18,21 +18,22 @@
     <!--column graph-->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
+        var date = new Date();
         google.load("visualization", "1", {packages:["corechart"]});
         google.setOnLoadCallback(drawChart);
         function drawChart() {
           var data = google.visualization.arrayToDataTable([
-            ['Day', 'Income', 'Outcome'],
-            ['Today',  {{$inPerDay[0]}},      {{$outPerDay[0]}}],
-            [  {{date('d')}} ,   {{$inPerDay[1]}},      {{$outPerDay[1]}}],
-            [  {{date('d')-1}} ,   {{$inPerDay[2]}},      {{$outPerDay[2]}}],
-            [  {{date('d')-2}} ,   {{$inPerDay[3]}},      {{$outPerDay[3]}}],
-            [  {{date('d')-3}} ,   {{$inPerDay[4]}},      {{$outPerDay[4]}}],
-            [  {{date('d')-4}} ,   {{$inPerDay[5]}},      {{$outPerDay[5]}}],
-            [  {{date('d')-5}} ,   {{$inPerDay[6]}},      {{$outPerDay[6]}}]
+            ['Day', 'Income', 'expenses'],
+            ['Today'               ,   {{$inPerDay[0]}},      {{$outPerDay[0]}}],
+            [  date.getDate()-1 ,   {{$inPerDay[1]}},      {{$outPerDay[1]}}],
+            [  date.getDate()-2 ,   {{$inPerDay[2]}},      {{$outPerDay[2]}}],
+            [  date.getDate()-3 ,   {{$inPerDay[3]}},      {{$outPerDay[3]}}],
+            [  date.getDate()-4 ,   {{$inPerDay[4]}},      {{$outPerDay[4]}}],
+            [  date.getDate()-5 ,   {{$inPerDay[5]}},      {{$outPerDay[5]}}],
+            [  date.getDate()-6 ,   {{$inPerDay[6]}},      {{$outPerDay[6]}}]
             ]);
           var options = {
-            title: 'Income/Outcome',
+            title: 'Income/expenses',
             hAxis: {title: '7Day', titleTextStyle: {color: 'red'}}
         };
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
@@ -59,7 +60,7 @@
       ['etc',       {{$category[6]}}]
       ]); 
     var options = {
-      title: 'Outcome activities'
+      title: 'expenses activities'
   };
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
@@ -80,7 +81,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!--*********************************Link page******************************-->
-                    <a class="navbar-brand" href="home.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" ><img src="images/logo.png" alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">

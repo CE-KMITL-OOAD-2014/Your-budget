@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-image: url(images/slider/bg7.jpg)">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!--*********************************Link page******************************-->
-                    <a class="navbar-brand" href="home.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" ><img src="images/logo.png" alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
@@ -102,7 +102,8 @@
             <table class="table table-condensed" style="
             margin-bottom: 0px;">
             <tr>
-                <td class="active" width="50%">Detail</td>
+                <td class="active" width="35%">Detail</td>
+                <td class="active">Amount</td>
                 <td class="active">Due Date</td>
                 <td class="active">Success</td>
                 <td class="active">Del</td>
@@ -111,6 +112,7 @@
             @for($i=0;$i<count($listReminder);$i++)
             <tr>
                 <td class="active">{{$listReminder[$i]->info}}</td>
+                <td class="active">{{$listReminder[$i]->amount}}</td>
                 <td class="active">{{$listReminder[$i]->date}}</td>
                 <td class="active">
                     <form method="post" action="achiveReminder">
@@ -180,19 +182,19 @@
 </div> 
 <!-- end income list -->
 
-<!-- outcome list -->
+<!-- expenses list -->
 <div class="row" style="  margin-left:12.5%; margin-right:12.5%; ">
     <div class="container" style="margin-bottom: 100px">
-        <div class="row" ><!-- outcome header -->
+        <div class="row" ><!-- expenses header -->
             <div class="col-md-2" style="padding-top: 15px;">
-                <FONT COLOR=white size=5>Outcome</FONT>
+                <FONT COLOR=white size=5>expenses</FONT>
             </div>
             <div class="col-md-2">
-               <button  class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myOutcome">Add Outcome</button>
+               <button  class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myexpenses">Add expenses</button>
            </div>
-       </div><!-- end of outcome header -->
+       </div><!-- end of expenses header -->
 
-       <!-- outcome area right -->
+       <!-- expenses area right -->
        <div class="container" style="margin-top:30px; padding: 9px; background:#FFFFFF">
         <div class="col-md-12" style="background:#FFFFFF; padding-left: 0px;padding-right: 0px; ">
             <table class="table table-condensed" style="
@@ -200,22 +202,22 @@
             <!-- On cells (`td` or `th`) -->
             <tr>
                 <td class="active">Amount</td>
-                <td class="active" width="40%">Detail</td>
+                <td class="active" width="35%">Detail</td>
                 <td class="active">Date</td>
                 <td class="active">Category</td>
                 <td class="active">Del</td>
             </tr>
 
-            @for($i=0;$i<count($listOutcome);$i++)
+            @for($i=0;$i<count($listExpenses);$i++)
             <tr>
-                <td class="active">{{$listOutcome[$i]->amount}}</td>
-                <td class="active">{{$listOutcome[$i]->info}}</td>
-                <td class="active">{{$listOutcome[$i]->created_at}}</td>
-                <td class="active">{{$listOutcome[$i]->category}}</td>
+                <td class="active">{{$listExpenses[$i]->amount}}</td>
+                <td class="active">{{$listExpenses[$i]->info}}</td>
+                <td class="active">{{$listExpenses[$i]->created_at}}</td>
+                <td class="active">{{$listExpenses[$i]->category}}</td>
                 <td class="active">
-                    <form method="post" action="removeOutcome">
-                        <input type="hidden" name="delete" value="{{$listOutcome[$i]->id}}">
-                        <input type="hidden" name="amount" value="{{$listOutcome[$i]->amount}}">
+                    <form method="post" action="removeExpenses">
+                        <input type="hidden" name="delete" value="{{$listExpenses[$i]->id}}">
+                        <input type="hidden" name="amount" value="{{$listExpenses[$i]->amount}}">
                         <input type="submit" value="delete">
                     </form>
                 </td>
@@ -226,7 +228,7 @@
 </div> 
 </div>
 </div>
-<!-- end outcome list -->
+<!-- end expenses list -->
 
 <!-- service -->
 <section id="services" class="service-item">
@@ -251,8 +253,8 @@
                             <img class="img-responsive" src="images/services/services5.png">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Recording Income Outcome </h3>
-                            <p>record Income and Outcome on cloud service</p>
+                            <h3 class="media-heading">Recording Income expenses </h3>
+                            <p>record Income and expenses on cloud service</p>
                         </div>
                     </div>
                 </div>
@@ -262,8 +264,8 @@
                             <img class="img-responsive" src="images/services/services2.png">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Alert for Outcome list</h3>
-                            <p>Reminders Outcome that used In due time   </p><br>
+                            <h3 class="media-heading">Alert for expenses list</h3>
+                            <p>Reminders expenses that used In due time   </p><br>
                         </div>
                     </div>
                 </div>                                      
@@ -319,16 +321,16 @@
 <!--end modal income-->
 
 
-<!-- Modal outcome-->
-<div class="modal fade" id="myOutcome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- Modal expenses-->
+<div class="modal fade" id="myexpenses" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add Outcome</h4>
+                <h4 class="modal-title" id="myModalLabel">Add expenses</h4>
             </div>
             <div class="modal-body">
-                <form role="form" method="post" action="outcome">
+                <form role="form" method="post" action="expenses">
                     <div class="form-group">
                         <label for="InputAmount">Amount:</label>
                         <input type="number" min="0" class="form-control" id="InputAmoune" placeholder="Amount" required name="amount">
@@ -354,14 +356,14 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancle</button>
                     <input class="btn btn-primary" style="
-                    margin-bottom: 10px;" type="submit" value="Add Outcome">
+                    margin-bottom: 10px;" type="submit" value="Add expenses">
                 </div>
             </form>
         </div>
     </div>
 </div>
 </div>
-<!--end Add Outcome-->
+<!--end Add expenses-->
 
 <!-- Modal Alert-->
 <div class="modal fade" id="myAlert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

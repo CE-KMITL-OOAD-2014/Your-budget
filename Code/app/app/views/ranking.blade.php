@@ -30,7 +30,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!--*********************************Link page******************************-->
-                    <a class="navbar-brand" href="home.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" ><img src="images/logo.png" alt="logo"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">

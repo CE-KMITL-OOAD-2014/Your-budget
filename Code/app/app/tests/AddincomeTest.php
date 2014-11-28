@@ -1,8 +1,8 @@
 <?php
 class AddincomeTest extends Testcase
 {
-	public	function AddIncomeTest(){
-		$myrec= new rec();
+	public	function testAddIncome(){
+		$myrec= new Record();
 		$myrec->setOwnerId('1');
 		$myrec->setInfo("info");
 		$myrec->setAmount('100');

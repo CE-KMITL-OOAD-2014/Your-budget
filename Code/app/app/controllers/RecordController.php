@@ -19,8 +19,8 @@ class RecordController extends BaseController{
 		return Redirect::to('list');
 	}
 
-//logic to add outcome record
-	public function addOutcome(){
+//logic to add Expenses record
+	public function addExpenses(){
 		$Record = new Record ;
 		$RecordRepo = new RecordInterface ;
 		$Record->setOwnerId(Auth::user()->id);
@@ -50,7 +50,7 @@ class RecordController extends BaseController{
 	}
 
 //logic to remove income record
-	public function removeOutcome(){
+	public function removeExpenses(){
 		$user = User::find(Auth::user()->id);
 		$user->balance = (Auth::user()->balance)+(Input::get('amount')); 
 		$user->save();
@@ -85,9 +85,9 @@ class RecordController extends BaseController{
 //logic to show all list of record
 	public function listRecord(){
 		$tempIncome = RecordDB::where('type','=',1)->where('ownerId', '=' , Auth::user()->id)->orderBy('created_at','desc')->get();
-		$tempOutcome = RecordDB::where('type','=',2)->where('ownerId', '=' , Auth::user()->id)->orderBy('created_at','desc')->get();
+		$tempExpenses = RecordDB::where('type','=',2)->where('ownerId', '=' , Auth::user()->id)->orderBy('created_at','desc')->get();
 		$tempReminder = ReminderDB::where('ownerId', '=' , Auth::user()->id)->orderBy('created_at','desc')->get();
-		return  View::make('index')->with(array('listIncome'=>$tempIncome,'listOutcome'=>$tempOutcome,'listReminder'=>$tempReminder));
+		return  View::make('index')->with(array('listIncome'=>$tempIncome,'listExpenses'=>$tempExpenses,'listReminder'=>$tempReminder));
 	}
 
 
